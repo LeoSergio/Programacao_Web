@@ -1,38 +1,36 @@
-# 🌐 Programação Web
+# 🌐 Programação Web - UFRN
 
-Este repositório contém as atividades, projetos práticos e anotações desenvolvidas durante a disciplina de **Programação Web** do curso de Sistemas de Informação. 
+Este repositório armazena as atividades, roteiros práticos e projetos desenvolvidos durante a disciplina de **Programação Web** do curso de Sistemas de Informação da Universidade Federal do Rio Grande do Norte (UFRN).
 
-O objetivo principal deste repositório é documentar a evolução na construção de aplicações web completas, aplicando conceitos de desenvolvimento front-end e back-end, integração de APIs e boas práticas de estruturação de código.
+Os materiais aqui presentes acompanham as orientações e a ementa proposta pelo professor Fabrício Vale, estruturando a progressão do aprendizado desde os fundamentos da web até o uso de frameworks modernos de renderização e roteamento.
 
-## 🚀 Tecnologias e Ferramentas
+## 🚀 Tecnologias e Ementa
 
-Ao longo da disciplina, as seguintes tecnologias compõem a base dos projetos desenvolvidos:
+O repositório está alinhado com a evolução dos tópicos abordados na disciplina, explorando o ecossistema JavaScript através das seguintes tecnologias:
 
-**Front-end:**
-* JavaScript / TypeScript
-* React.js / Next.js
-* Figma (Prototipação e UI/UX)
-
-**Back-end:**
-* Python
-* Django / FastAPI
-
-**Banco de Dados & Infraestrutura:**
-* PostgreSQL / SQLite
-* Docker (Containerização dos ambientes)
+*   **Fundamentos Web:** Estruturação com HTML Básico e estilização com CSS.
+*   **JavaScript Moderno:** Manipulação do DOM, Arrow Functions, Promises e manipulação de arquivos JSON.
+*   **React:** Construção de interfaces dinâmicas e reativas baseadas em componentes (englobando as *Receitas React* da ementa).
+*   **Next.js:** Renderização de páginas, geração de sites estáticos (SSG), roteamento dinâmico (`dynamicRoutingSSG`) e atualizações para as versões mais recentes (Next 15).
 
 ## 📂 Estrutura do Repositório
 
-A organização dos diretórios segue a ordem cronológica e de complexidade das atividades:
+O conteúdo segue rigorosamente a metodologia de entregas práticas ("Receitas") estipulada no site da disciplina:
 
-* `atividades/`: Exercícios menores, listas de fixação e testes de conceitos isolados.
-* `projetos/`: Aplicações completas desenvolvidas ao longo do semestre.
-* `docs/`: Documentações adicionais, modelagem de dados e diagramas.
+*   `fundamentos/`: Implementações de HTML, CSS e os scripts iniciais de JavaScript abordados nas primeiras etapas.
+*   `receitas-pweb/`: Diretório com as entregas sequenciais exigidas (Receitas de 1 a 9), ilustrando a evolução dos conceitos.
+*   `receitas-react/`: Projetos e testes focados exclusivamente na biblioteca React (da `Receita-React-00` à `03`).
+*   `nextjs/`: Diretório contendo as implementações mais avançadas com o framework Next.js, incluindo roteamento e consumo de dados.
+*   `mini-projeto/`: Código-fonte integral referente ao *MiniProjeto1* desenvolvido para compor a avaliação da disciplina.
 
 ## ⚙️ Como Executar os Projetos
 
-Cada projeto maior possui seu próprio arquivo de configuração, mas em geral, o passo a passo para rodar localmente é:
+Como o repositório é composto por vários subprojetos de naturezas diferentes, a execução varia conforme a pasta:
 
-1. Clone este repositório:
+1. **Projetos puros (HTML/JS):** Basta abrir o arquivo `index.html` correspondente diretamente no navegador ou utilizar extensões como o *Live Server* no VS Code.
+2. **Projetos em React/Next.js:** 
+   Navegue até a pasta específica da receita e instale as dependências antes de iniciar o servidor de desenvolvimento:
    ```bash
-   git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/seu-usuario/nome-do-repositorio.git)
+   cd nome-da-pasta
+   npm install
+   npm run dev
