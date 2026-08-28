@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício - Receita 1</title>
+    <style>
+        /* Beautify Tables */
+        table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 300px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+        }
+        table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+        table th, table td {
+            padding: 12px 15px;
+        }
+        table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+        /* Side by Side Layout */
+        .table-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Projeto 1</h1>
+        <nav>
+            <ul>
+                <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">HTML</a></li>
+                <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank">CSS</a></li>
+                <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Versos e Cardápio</h2>
+            <p>
+                A água é vida, o café desperta, <br>
+                O suco refresca, a alma liberta. <br>
+                Mas quando a sede pede um sabor, <br>
+                Olho pro cardápio e vejo o valor.
+            </p>
+        </section>
+
+        <section>
+            <h2>Tabelas Lado a Lado</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bebida</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Café Expresso</td>
+                            <td>R$ 4,50</td>
+                        </tr>
+                        <tr>
+                            <td>Suco de Laranja</td>
+                            <td>R$ 7,00</td>
+                        </tr>
+                        <tr>
+                            <td>Água Mineral</td>
+                            <td>R$ 3,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sobremesa</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bolo de Cenoura</td>
+                            <td>R$ 6,00</td>
+                        </tr>
+                        <tr>
+                            <td>Pudim</td>
+                            <td>R$ 8,00</td>
+                        </tr>
+                        <tr>
+                            <td>Brigadeiro</td>
+                            <td>R$ 2,50</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>PW 2026.2 - Projeto 1</p>
+    </footer>   
+</body>
+</html>
