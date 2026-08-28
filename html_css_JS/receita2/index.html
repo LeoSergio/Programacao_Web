@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício - Receita 2</title>
+    <!-- Exercício 7: Arquivo de estilo externo -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Exercício 1: Classe mote */
+        p.mote {
+            color: red;
+        }
+
+        /* Exercício 3: Estilos de link customizados (hover, visited) */
+        a.pesquisa-poeta:link {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a.pesquisa-poeta:visited {
+            color: #8e44ad;
+        }
+        a.pesquisa-poeta:hover {
+            color: #e67e22;
+            text-decoration: underline;
+        }
+        a.pesquisa-poeta:active {
+            color: #c0392b;
+        }
+
+        /* Exercício 6: Imagem arredondada dentro da div poeta */
+        div.poeta img {
+            border-radius: 50%; /* Exercício 5 */
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: 3px solid #009879;
+        }
+
+        /* Beautify Tables */
+        table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 300px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+        }
+        table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+        table th, table td {
+            padding: 12px 15px;
+        }
+        table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+        /* Side by Side Layout */
+        .table-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Projeto 1</h1>
+        <nav>
+            <ul>
+                <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">HTML</a></li>
+                <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank">CSS</a></li>
+                <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Poesia e Cardápio</h2>
+            <!-- Exercício 5 e 6: div com classe "poeta" e img arredondada -->
+            <div class="poeta">
+                <img src="https://ui-avatars.com/api/?name=João+Paraibano&size=150&background=random" alt="Avatar de João Paraibano">
+                <h2>
+                    <!-- Exercício 2 e 4: Link para Google com target="_blank" -->
+                    <a class="pesquisa-poeta" href="https://www.google.com/search?q=Jo%C3%A3o+Paraibano" target="_blank">
+                        João Paraibano
+                    </a>
+                </h2>
+                <!-- Exercício 1: Versos e classe "mote" (cor vermelha) -->
+                <p>Branca, preta, pobre e rica, toda mãe pra Deus é bela;</p>
+                <p>Acho que a mãe merecia dois corações dentro dela:</p>
+                <p class="mote">Um pra sofrer pelos filhos;</p>
+                <p class="mote">Outro pra bater por ela.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Tabelas Lado a Lado</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bebida</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Café Expresso</td>
+                            <td>R$ 4,50</td>
+                        </tr>
+                        <tr>
+                            <td>Suco de Laranja</td>
+                            <td>R$ 7,00</td>
+                        </tr>
+                        <tr>
+                            <td>Água Mineral</td>
+                            <td>R$ 3,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sobremesa</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bolo de Cenoura</td>
+                            <td>R$ 6,00</td>
+                        </tr>
+                        <tr>
+                            <td>Pudim</td>
+                            <td>R$ 8,00</td>
+                        </tr>
+                        <tr>
+                            <td>Brigadeiro</td>
+                            <td>R$ 2,50</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Exercício 7: Tabela de Bebidas e Links -->
+        <section>
+            <h2>Bebidas e Links</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bebida</th>
+                        <th>Saiba Mais</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Café Expresso</td>
+                        <td><a href="https://pt.wikipedia.org/wiki/Caf%C3%A9_expresso" target="_blank">Sobre Café</a></td>
+                    </tr>
+                    <tr>
+                        <td>Suco de Laranja</td>
+                        <td><a href="https://pt.wikipedia.org/wiki/Suco_de_laranja" target="_blank">Sobre Suco</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>PW 2026.2 - Projeto 1</p>
+    </footer>   
+</body>
+</html>

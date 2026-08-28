@@ -1,0 +1,6 @@
+/* style.css */
+/* Exercício 7: Estilo da marca <th> */
+th {
+    background-color: #8e44ad !important; /* Cor de fundo roxa para sobrepor o estilo anterior */
+    color: white;
+}
