@@ -17,8 +17,8 @@ O repositório está alinhado com a evolução dos tópicos abordados na discipl
 
 O conteúdo segue rigorosamente a metodologia de entregas práticas ("Receitas") estipulada no site da disciplina:
 
-*   `fundamentos/`: Implementações de HTML, CSS e os scripts iniciais de JavaScript abordados nas primeiras etapas.
-*   `receitas-pweb/`: Diretório com as entregas sequenciais exigidas (Receitas de 1 a 9), ilustrando a evolução dos conceitos.
+*   `html_css_JS/`: Implementações de HTML, CSS e os scripts iniciais de JavaScript abordados nas primeiras etapas (engloba as Receitas 1 a 4 e exercícios de fundamentos).
+*   `receitas-pweb/`: Diretório com as demais entregas sequenciais exigidas, ilustrando a evolução dos conceitos (como JSON e Promises).
 *   `receitas-react/`: Projetos e testes focados exclusivamente na biblioteca React (da `Receita-React-00` à `03`).
 *   `nextjs/`: Diretório contendo as implementações mais avançadas com o framework Next.js, incluindo roteamento e consumo de dados.
 *   `mini-projeto/`: Código-fonte integral referente ao *MiniProjeto1* desenvolvido para compor a avaliação da disciplina.
