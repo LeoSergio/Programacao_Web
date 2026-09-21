@@ -7,29 +7,30 @@ const cervejas = [
     { name: "Stella Artois", alcohol: "5.2%", style: "Pilsen",         ibu: "30" },
 ];
 
-// elementId agora é um parâmetro com valor default "cervejasDiv"
-const carregarDiv = (cervs, elementId = "cervejasDiv") => {
+// carregarDiv agora é totalmente genérica:
+//   - elementId: id do elemento onde a tabela é inserida (default "cervejasDiv")
+//   - headers:   nomes das colunas (default ["Nome", "Álcool", "Estilo", "Amargor"])
+//   - props:     propriedades dos objetos a serem exibidas (default ["name","alcohol","style","ibu"])
+const carregarDiv = (
+    cervs,
+    elementId = "cervejasDiv",
+    headers   = ["Nome", "Álcool", "Estilo", "Amargor"],
+    props     = ["name", "alcohol", "style", "ibu"]
+) => {
     const div = document.getElementById(elementId);
 
-    const rows = cervs.map(c =>
-        `<tr>
-            <td>${c.name}</td>
-            <td>${c.alcohol}</td>
-            <td>${c.style}</td>
-            <td>${c.ibu}</td>
-        </tr>`
-    ).join("\n");
+    // Gera as células de cabeçalho dinamicamente a partir do parâmetro headers
+    const headerRow = headers.map(h => `<th>${h}</th>`).join("");
+
+    // Gera as linhas acessando cada propriedade listada em props
+    const rows = cervs.map(item => {
+        const cells = props.map(p => `<td>${item[p]}</td>`).join("");
+        return `<tr>${cells}</tr>`;
+    }).join("\n");
 
     div.innerHTML = `
         <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Álcool</th>
-                    <th>Estilo</th>
-                    <th>Amargor</th>
-                </tr>
-            </thead>
+            <thead><tr>${headerRow}</tr></thead>
             <tbody>${rows}</tbody>
         </table>
     `;
@@ -37,17 +38,17 @@ const carregarDiv = (cervs, elementId = "cervejasDiv") => {
 
 const ordenarCervejas = () => {
     cervejas.sort((a, b) => a.name.localeCompare(b.name));
-    carregarDiv(cervejas); // usa o default "cervejasDiv"
+    carregarDiv(cervejas);
 };
 
 const embaralharCervejas = () => {
     cervejas.sort(() => Math.random() - 0.5);
-    carregarDiv(cervejas); // usa o default "cervejasDiv"
+    carregarDiv(cervejas);
 };
 
 document.getElementById("linkCarregar").addEventListener("click", (e) => {
     e.preventDefault();
-    carregarDiv(cervejas); // usa o default "cervejasDiv"
+    carregarDiv(cervejas);
 });
 
 document.getElementById("linkOrdenar").addEventListener("click", (e) => {
