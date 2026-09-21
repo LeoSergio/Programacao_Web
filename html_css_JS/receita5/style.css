@@ -1,0 +1,109 @@
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, #1a0533 0%, #2d1b69 50%, #11998e 100%);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 450px;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffe3f3;
+    text-shadow: 0 0 20px rgba(255, 150, 200, 0.5);
+    letter-spacing: 1px;
+}
+
+/* ─── Links no lugar de botões ─────────────────────────────────────────────── */
+.links-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.links-container a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.links-container a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(240, 147, 251, 0.6);
+    background: linear-gradient(135deg, #f5576c, #f093fb);
+}
+
+.links-container a:active {
+    transform: translateY(-1px);
+}
+
+/* ─── Tabela ────────────────────────────────────────────────────────────────── */
+.lista-container {
+    min-height: 200px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+table th {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 12px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 10px 10px 0 0;
+    color: #ffe3f3;
+}
+
+table td {
+    padding: 14px;
+    font-size: 17px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    transition: background 0.25s ease;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+    border-radius: 0 0 10px 10px;
+}
+
+table tr:hover td {
+    background: rgba(255, 255, 255, 0.12);
+    cursor: default;
+}
