@@ -7,8 +7,9 @@ const cervejas = [
     { name: "Stella Artois", alcohol: "5.2%", style: "Pilsen",         ibu: "30" },
 ];
 
-const carregarDiv = (cervs) => {
-    const div = document.getElementById("cervejasDiv");
+// elementId agora é um parâmetro com valor default "cervejasDiv"
+const carregarDiv = (cervs, elementId = "cervejasDiv") => {
+    const div = document.getElementById(elementId);
 
     const rows = cervs.map(c =>
         `<tr>
@@ -36,17 +37,17 @@ const carregarDiv = (cervs) => {
 
 const ordenarCervejas = () => {
     cervejas.sort((a, b) => a.name.localeCompare(b.name));
-    carregarDiv(cervejas);
+    carregarDiv(cervejas); // usa o default "cervejasDiv"
 };
 
 const embaralharCervejas = () => {
     cervejas.sort(() => Math.random() - 0.5);
-    carregarDiv(cervejas);
+    carregarDiv(cervejas); // usa o default "cervejasDiv"
 };
 
 document.getElementById("linkCarregar").addEventListener("click", (e) => {
     e.preventDefault();
-    carregarDiv(cervejas);
+    carregarDiv(cervejas); // usa o default "cervejasDiv"
 });
 
 document.getElementById("linkOrdenar").addEventListener("click", (e) => {
