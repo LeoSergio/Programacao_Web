@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+   <head>
+      <meta charset="UTF-8">
+      <title>ReactZero - Receita 10</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+      <style>
+         :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #f59e0b;
+            --primary-hover: #d97706;
+            --border-color: #334155;
+            --table-hover: #334155;
+         }
+
+         body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 2rem;
+            box-sizing: border-box;
+         }
+
+         .btn-carregar {
+            background-color: var(--primary);
+            color: #000;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
+            margin-bottom: 2rem;
+         }
+
+         .btn-carregar:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+         }
+
+         .container {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            max-width: 600px;
+            width: 100%;
+            animation: fadeIn 0.4s ease-out;
+         }
+
+         h1 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            text-align: center;
+         }
+
+         table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 8px;
+         }
+
+         th, td {
+            padding: 0.85rem 1.2rem;
+            text-align: left;
+         }
+
+         th {
+            background-color: #0f172a;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border-color);
+         }
+
+         td {
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-color);
+            font-size: 0.95rem;
+         }
+
+         tbody tr:last-child td {
+            border-bottom: none;
+         }
+
+         tbody tr {
+            transition: background 0.15s ease;
+         }
+
+         tbody tr:hover {
+            background-color: var(--table-hover);
+         }
+
+         @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+         }
+      </style>
+   </head>
+
+   <body>
+
+      <!-- Botão para disparar a renderização (Questão 4) -->
+      <button id="botao-carregar" class="btn-carregar" onclick="carregarConteudo()">
+         Carregar Tabela de Bebidas
+      </button>
+
+      <!-- Contêiner do React -->
+      <div id="app"></div>
+
+      <!-- Bibliotecas locais na pasta react/libs -->
+      <script src="../libs/react.js"></script>
+      <script src="../libs/react-dom.js"></script>
+      <script src="../libs/babel.js"></script>
+
+      <script type="text/babel">
+
+         // Questão 4: Array fixo de objetos JSON
+         const bebidas = [
+            { nome: "Havana", marca: "Engenho Anísio Santiago" },
+            { nome: "Anísio Santiago", marca: "Fazenda Havana" },
+            { nome: "Salinas", marca: "Salinas Tradicional" },
+            { nome: "Vale Verde", marca: "Vale Verde Alambique" },
+            { nome: "Claudionor", marca: "Januária / MG" }
+         ];
+
+         // Questão 3: Função Cabecalho
+         function Cabecalho() {
+            return <h1>Minha tabela de bebidas</h1>;
+         }
+
+         // Questões 1, 2, 4 e 5: Componente TabelaBebidas usando map no array JSON e estilizada
+         function TabelaBebidas() {
+            return (
+               <div className="container">
+                  <Cabecalho />
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>Nome</th>
+                           <th>Marca</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        {bebidas.map((b, index) => (
+                           <tr key={index}>
+                              <td><strong>{b.nome}</strong></td>
+                              <td>{b.marca}</td>
+                           </tr>
+                        ))}
+                     </tbody>
+                  </table>
+               </div>
+            );
+         }
+
+         // Questão 4: Função executada ao clicar no botão
+         function carregarConteudo() {
+            ReactDOM.render(
+               <TabelaBebidas />,
+               document.getElementById("app")
+            );
+         }
+
+      </script>
+
+   </body>
+</html>
