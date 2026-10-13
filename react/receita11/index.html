@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+
+   <head>
+
+      <title>ReceitaReact - 2</title>      
+
+   </head>
+
+   <body>
+
+      <div id="app">
+
+      
+
+      </div>
+
+
+      <!-- Bibliotecas locais na pasta react/libs -->
+      <script src="../libs/react.js"></script>
+      <script src="../libs/react-dom.js"></script>
+      <script src="../libs/babel.js"></script>
+
+            
+
+            <script type="text/babel">
+
+      
+
+         class Cabecalho extends React.Component {
+            render() {
+               return (
+                  <header>
+                     <h2>{this.props.descricao || "Cardápio do Bar"}</h2>
+                     <hr/>
+                  </header>
+               );
+            }
+         }
+
+         class Rodape extends React.Component {
+            render() {
+               return (
+                  <footer>
+                     <hr/>
+                     <small>{this.props.texto || "Desenvolvido com React (Componentes de Classe)"}</small>
+                  </footer>
+               );
+            }
+         }
+
+         class TabelaBebidas extends React.Component{
+
+            render(){
+
+               return (
+
+                  <div>
+
+                     <h1>{this.props.titulo}</h1>
+
+                     <table id="tabela" border="1">
+
+                        <thead>
+
+                           <tr><th>Nome</th><th>Marca</th></tr>
+
+                        </thead>
+
+                        <tbody>
+
+                           <tr><td>Havana</td><td>Engenho Anísio Santiago</td></tr>
+
+                        </tbody>
+
+                     </table>
+
+                 </div> 
+
+               )
+
+            }
+
+         }
+
+         ReactDOM.render(
+
+            <div>
+               <Cabecalho descricao="Sistema de Consulta de Bebidas" />
+               <TabelaBebidas titulo="Tabela de Cana" />
+               <Rodape texto="© 2026 - Programação Web UFRN" />
+            </div>
+
+            ,
+
+            document.getElementById("app"))
+
+
+      </script>
+
+   </body>
+
+</html>
